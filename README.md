@@ -34,4 +34,8 @@ O projeto nasceu do interesse em explorar na prática os conceitos fundamentais 
 1. Clone este repositório:
 ```bash
 git clone [https://github.com/seu-usuario/nome-do-repositorio.git](https://github.com/seu-usuario/nome-do-repositorio.git)
+
+cd nome-pasta
+
+Execute o index.html
 ```
