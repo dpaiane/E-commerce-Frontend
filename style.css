@@ -1,6 +1,7 @@
 body{
     margin-top: 15px;
 }
+/** estilo aplicado aos cards de produto **/
 .product-card{
     max-width: 320px;
     background: #fff;
@@ -55,6 +56,7 @@ body{
 .btn-buy:hover {
     background-color: rgb(20, 65, 20);
 }
+/** estilo aplicado ao cabecalho **/
 #header{
     background: linear-gradient(90deg, #1d5028,#28a745);
     padding: 12px 0;
@@ -71,6 +73,7 @@ body{
 .nav-link:hover{
     color: black !important;
 }
+/** estilo aplicado ao rodape **/
 footer {
     background: linear-gradient(90deg, #1d5028, #28a745);
     color: #fff;
@@ -91,7 +94,6 @@ footer {
 .footer-column h6{
     margin-bottom: 1rem;
     padding: 0;
-    margin: 0;
 }
 .footer-column ul{
     list-style: none;
@@ -106,6 +108,9 @@ footer {
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.3;
+}
+.footer-column ul li a:hover{
+    color: black !important; 
 }
 
 
