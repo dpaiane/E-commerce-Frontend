@@ -1,20 +1,31 @@
-async function carregarProdutos() {
-    const container = document.getElementById("lista-produtos");    
+async function carregarProdutos(termo = '') {
+    const container = document.getElementById("lista-produtos");
 
-    // busca 6 produtos na api
-    const resposta = await fetch('https://dummyjson.com/products?limit=20');
+    // Se houver termo, usa a rota de busca da API; senão, carrega os 20 iniciais
+    const url = termo 
+        ? `https://dummyjson.com/products/search?q=${encodeURIComponent(termo)}`
+        : 'https://dummyjson.com/products?limit=20';
+
+    const resposta = await fetch(url);
     const dados = await resposta.json();
 
-    // limpa antes de inserir
     container.innerHTML = '';
 
+    // Feedback caso nenhum produto seja encontrado
+    if (dados.products.length === 0) {
+        container.innerHTML = `
+            <div class="col-12 text-center py-5">
+                <p class="text-muted fs-5">Nenhum produto encontrado para "<strong>${termo}</strong>".</p>
+            </div>`;
+        return;
+    }
+
     dados.products.forEach(produto => {
-        // formata o preco
         const precoFormatado = produto.price.toLocaleString('pt-BR', {
             style: 'currency',
             currency: 'BRL'
         });
-        // monta o html do card com os campos do dummy
+
         const cardHTML = `
             <div class="col-md-4 mb-4">
                 <div class="product-card">
@@ -28,10 +39,23 @@ async function carregarProdutos() {
                         </button>
                     </div>
                 </div>
-            </div>`;  
-        // adiciona o card na tela
+            </div>`;
         container.innerHTML += cardHTML;
-});   
-} 
-/** carrega a lista inicial **/
+    });
+}
+
+// Escuta o envio do formulário de busca
+document.getElementById("form-busca").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const termo = document.getElementById("input-busca").value.trim();
+    carregarProdutos(termo);
+});
+
+// Recarrega todos os produtos se o usuário limpar o campo (clicando no "x" do input search)
+document.getElementById("input-busca").addEventListener("search", (e) => {
+    if (e.target.value === '') {
+        carregarProdutos();
+    }
+});
+
 carregarProdutos();
