@@ -13,14 +13,14 @@
     <!----------------------------- area de header - lado esquerdo ------------------------------>
     <nav style="position: sticky; top: 0; z-index: 1;" class="navbar navbar-expand-lg" data-bs-target="#menu" id="header">
         <div class="container">
-            <a style="text-decoration: none;" class="navbar text-white" href="#">TucanStore</a>
+            <a style="text-decoration: none;" class="navbar text-white fs-5" href="#">TucanStore</a>
             <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Alternar navegação">☰</button>
             <!-- lado direito do header -->
             <div class="collapse navbar-collapse justify-content-end" id="menu">
                 <ul class="navbar-nav align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="#">Produtos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Carrinho</a></li> 
-                    <li class="nav-item"><a class="nav-link" href="#">Contato</a></li>
+                    <li class="nav-item"><a class="nav-link fs-5" href="#">Produtos</a></li>
+                    <li class="nav-item"><a class="nav-link fs-5" href="#">Carrinho</a></li> 
+                    <li class="nav-item"><a class="nav-link fs-5" href="#">Contato</a></li>
                     <!-- logo -->
                     <li class="nav-item ms-lg-3">
                         <a class="btn d-flex align-items-center px-3 py-2" href="index.html">
@@ -32,7 +32,7 @@
         </div>
     </nav>
     <!-------------------------- carousel de imagens ----------------------------------->
-    <div id="carouselIndicators" class="carousel slide mb-5" data-bs-ride="carousel">
+    <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
         <!-- indicadores para o carousel -->
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true"></button>
@@ -63,13 +63,60 @@
             <span class="visually-hidden">Próximo</span>
         </button>
     </div>
-    
+    <!---------------------- faixa de Beneficios ---------------------->
+    <section class="beneficios-bar py-4 mb-5">
+        <div class="container">
+            <div class="row g-4 text-center text-md-start">
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="beneficios-item d-flex align-items-center justify-content-center justify-content-md-start gap-3">
+                        <div class="beneficios-icon">🚚</div>
+                        <div>
+                            <h6 class="mb-0 fw-bold text-dark">Frete Grátis</h6>
+                            <small class="text-muted">Nas compras acima de R$ 199</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="beneficios-item d-flex align-items-center justify-content-center justify-content-md-start gap-3">
+                        <div class="beneficios-icon">💳</div>
+                        <div>
+                            <h6 class="mb-0 fw-bold text-dark">Até 10x sem juros</h6>
+                            <small class="text-muted">Ou 5% OFF no Pix</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="beneficios-item d-flex align-items-center justify-content-center justify-content-md-start gap-3">
+                        <div class="beneficios-icon">🔒</div>
+                        <div>
+                            <h6 class="mb-0 fw-bold text-dark">Compra Segura</h6>
+                            <small class="text-muted">Seus dados 100% protegidos</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="beneficios-item d-flex align-items-center justify-content-center justify-content-md-start gap-3">
+                        <div class="beneficios-icon">🔄</div>
+                        <div>
+                            <h6 class="mb-0 fw-bold text-dark">Troca Fácil</h6>
+                            <small class="text-muted">Até 7 dias após o recebimento</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
     <!---------------------- area dos produtos ---------------------->
     <div class="container">
         <!-- busca de produtos -->
         <div class="row justify-content-center mb-4">
+            <h1 class="pb-4 display-3 text-center">Encontre tudo em um só lugar</h1>
             <div class="col-12 col-md-8 col-lg-6">
-                <h1 class="pb-4">Encontre tudo em um só lugar</h1>
                 <form id="form-busca" class="search-box d-flex align-items-center bg-white p-2">
                     <input 
                         type="search" 
@@ -83,6 +130,16 @@
             </div>
         </div>
 
+        <!-- filtro rápido por categorias -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-12">
+                <div id="lista-categorias" class="d-flex flex-wrap justify-content-center gap-2">
+                    <!-- as pílulas de categoria serão inseridas aqui -->
+                </div>
+            </div>
+        </div>
+
+        <!-- montagem dos cards -->
         <div class="row" id="lista-produtos">
             <!-- aqui os cards serão criados -->
         </div>
@@ -96,9 +153,9 @@
             <div class="footer-column">
                 <h3>Institucional</h3>
                 <ul class="list-unstyled d-flex flex-column gap-2">
-                    <li><a class="has-text-grey-dark text-decoration-none" href="#">Sobre Nós</a></li>
-                    <li><a class="has-text-grey-dark text-decoration-none" href="#">Central de ajuda</a></li>
-                    <li><a class="has-text-grey-dark text-decoration-none" href="#">Fale conosco</a></li>
+                    <li><a class="text-grey-dark text-decoration-none" href="#">Sobre Nós</a></li>
+                    <li><a class="text-grey-dark text-decoration-none" href="#">Central de ajuda</a></li>
+                    <li><a class="text-grey-dark text-decoration-none" href="#">Fale conosco</a></li>
                 </ul>
             </div>
 
@@ -106,11 +163,11 @@
             <div class="footer-column">
                 <h3>Minha conta</h3>
                 <ul class="list-unstyled d-flex flex-column gap-2">
-                    <li><a class="has-text-grey-dark text-decoration-none" href="#">Meus pedidos</a></li>
-                    <li><a class="has-text-grey-dark text-decoration-none" href="#">Lista de desejos</a></li>
-                    <li><a class="has-text-grey-dark text-decoration-none" href="#">Carrinho</a></li>
-                    <li><a class="has-text-grey-dark text-decoration-none" href="#">Acompanhar Entrega</a></li>
-                    <li><a class="has-text-grey-dark text-decoration-none" href="#">Dados Cadastrais</a></li>
+                    <li><a class="text-grey-dark text-decoration-none" href="#">Meus pedidos</a></li>
+                    <li><a class="text-grey-dark text-decoration-none" href="#">Lista de desejos</a></li>
+                    <li><a class="text-grey-dark text-decoration-none" href="#">Carrinho</a></li>
+                    <li><a class="text-grey-dark text-decoration-none" href="#">Acompanhar Entrega</a></li>
+                    <li><a class="text-grey-dark text-decoration-none" href="#">Dados Cadastrais</a></li>
                 </ul>
             </div>
 
@@ -118,11 +175,11 @@
             <div class="footer-column">
                 <h3>Corporativo</h3>
                 <ul class="list-unstyled d-flex flex-column gap-2">
-                    <li><a class="has-text-grey-dark text-decoration-none" href="#">Empresa</a></li>
-                    <li><a class="has-text-grey-dark text-decoration-none" href="#">Quero ser um franqueado</a></li>
-                    <li><a class="has-text-grey-dark text-decoration-none" href="#">Divulgue sua marca</a></li>
-                    <li><a class="has-text-grey-dark text-decoration-none" href="#">Indique um ponto</a></li>
-                    <li><a class="has-text-grey-dark text-decoration-none" href="#">Trabalhe conosco</a></li>
+                    <li><a class="text-grey-dark text-decoration-none" href="#">Empresa</a></li>
+                    <li><a class="text-grey-dark text-decoration-none" href="#">Quero ser um franqueado</a></li>
+                    <li><a class="text-grey-dark text-decoration-none" href="#">Divulgue sua marca</a></li>
+                    <li><a class="text-grey-dark text-decoration-none" href="#">Indique um ponto</a></li>
+                    <li><a class="text-grey-dark text-decoration-none" href="#">Trabalhe conosco</a></li>
                 </ul>
             </div>
         </div>
@@ -144,7 +201,7 @@
                 </small>
             </address>
 
-            <small class="text-white-50">&copy; 2026 Tucan Store. Todos os direitos reservados.</small>
+            <small class="text-white">&copy; 2026 Tucan Store. Todos os direitos reservados.</small>
         </div>
     </footer>
     
